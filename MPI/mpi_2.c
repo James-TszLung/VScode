@@ -15,7 +15,6 @@ int main(){
 	MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
 	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 	
-	
 	if(my_rank!=0){
         local_x=my_rank;
         local_y=local_x*10;
