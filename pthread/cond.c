@@ -1,3 +1,9 @@
+/*条件变量实现生产者消费者问题
+1.多个生产者线程，每生产一个产品(数字)，对共享变量counter加1，并向被条件变量cond阻塞的线程发送唤醒信号。
+    1)线程数通过命令行参数输入
+    2)指定数字缓冲区大小为10。
+2.一个消费者线程，如果counter==0，则在条件变量cond阻塞；否则，取出产品(数字)，并对counter减1。
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -36,7 +42,7 @@ void *pfun(void *para){
         pthread_mutex_unlock(&mutex);
         sem_post(&full);
     } while (1);
-    
+
 }
 void *cfun(void *para){
     do

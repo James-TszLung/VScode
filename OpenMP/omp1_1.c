@@ -43,7 +43,6 @@ void thread_single(){
     {
         sum+=factor/(2*i+1);
     }
-
 }
 
 int main(int argc, char *argv[]){
